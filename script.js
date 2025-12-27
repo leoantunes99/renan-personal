@@ -554,6 +554,14 @@ revelar.reveal('.hidden-about-item4',
     delay: 550
   })
 
+revelar.reveal('.hidden-about-btn',
+  {
+    duration: 1000,
+    distance: '100px',
+    origin: 'right',
+    delay: 600
+  })
+
 // STEPS
 
 revelar.reveal('.hidden-steps-title',
