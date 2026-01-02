@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // --- NAVBAR HIDE/SHOW ON SCROLL (CORRIGIDO) ---
-  // Muda position para fixed temporariamente
+
   header.style.position = 'fixed';
   header.style.width = '100%';
 
@@ -81,11 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateNavbar() {
     const currentScrollY = window.scrollY;
 
-    // Se rolar mais de 100px para baixo, esconde o navbar
     if (currentScrollY > 100 && currentScrollY > lastScrollY) {
       header.style.transform = 'translateY(-100%)';
     } else {
-      // Ao rolar para cima, mostra o navbar
       header.style.transform = 'translateY(0)';
     }
 

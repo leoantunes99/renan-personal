@@ -94,7 +94,7 @@ body {
     visibility: hidden;
 }
 
-/* Header - COPIADO DO INDEX.HTML */
+/* Header */
 header {
     position: sticky;
     top: 0;
@@ -962,8 +962,6 @@ footer {
 @media (max-width: 768px) {
     .story-section {
         margin-top: -2px;
-        /* Sobe a seção levemente para cobrir a fresta */
         padding-top: calc(5rem + 2px);
-        /* Mantém o espaçamento interno visual correto */
     }
 }

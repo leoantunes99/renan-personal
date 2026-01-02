@@ -390,7 +390,6 @@ header {
     padding: 0.75rem 2rem;
     background-color: var(--primary);
     color: var(--text-dark);
-    /* Ajustado para usar a variável de texto escuro do seu projeto */
     border: none;
     border-radius: 0.5rem;
     font-size: 1rem;

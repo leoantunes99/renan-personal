@@ -92,7 +92,7 @@
                     <div class="hidden-method-card1">
                         <article class="card">
                             <div class="card-icon" aria-hidden="true">
-                                <span class="material-symbols-outlined">assignment</span>
+                                <span class="material-symbols-outlined">sticky_note_2</span>
                             </div>
                             <div>
                                 <h3 class="card-title">Planos Personalizados</h3>
@@ -104,11 +104,12 @@
                     <div class="hidden-method-card2">
                         <article class="card">
                             <div class="card-icon" aria-hidden="true">
-                                <span class="material-symbols-outlined">fitness_center</span>
+                                <span class="material-symbols-outlined">cognition_2</span>
                             </div>
                             <div>
                                 <h3 class="card-title">Mentalidade</h3>
-                                <p class="card-text">Construímos a disciplina e a constância para tornar o exercício um hábito, mantendo seu foco e resultados mesmo nos dias mais difíceis.</p>
+                                <p class="card-text">Construímos a disciplina e a constância para tornar o exercício um
+                                    hábito, mantendo seu foco e resultados mesmo nos dias mais difíceis.</p>
                             </div>
                         </article>
                     </div>
@@ -157,11 +158,11 @@
                             <span class="credential-text">Formação em Educação Física</span>
                         </div>
                         <div class="credential-item hidden-about-item3">
-                            <span class="material-symbols-outlined" aria-hidden="true">accessibility_new</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">sports_gymnastics</span>
                             <span class="credential-text">Especialista em Biomecânica</span>
                         </div>
                         <div class="credential-item hidden-about-item4">
-                            <span class="material-symbols-outlined" aria-hidden="true">history</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">clock_arrow_up</span>
                             <span class="credential-text">Mais de 10 anos de experiência</span>
                         </div>
                     </div>
@@ -186,23 +187,91 @@
                     </div>
                 </div>
                 <div class="steps-grid">
-                    <div class="step-item">
-                        <div class="step-number step-number-active hidden-steps-number1">1</div>
-                        <h3 class="step-title hidden-steps-title1">Vamos começar</h3>
-                        <p class="step-text hidden-steps-text1">Após escolher seu plano, vamos conversar sobre seus
-                            objetivos, nível atual e possíveis limitações.</p>
+                    <div class="step-item-wrapper">
+                        <div class="step-item">
+                            <div class="step-number step-number-active hidden-steps-number1">1</div>
+                            <h3 class="step-title hidden-steps-title1">Escolha um plano</h3>
+                            <p class="step-text hidden-steps-text1">Após a escolha, iremos conversar sobre seus
+                                objetivos, nível atual e possíveis limitações.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number step-number-inactive hidden-steps-number2">2</div>
+                            <h3 class="step-title hidden-steps-title2">Receba seu treino</h3>
+                            <p class="step-text hidden-steps-text2">De acordo com seu objetivo, crio seu treino
+                                personalizado em até 48 horas após nossa conversa.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number step-number-inactive hidden-steps-number3">3</div>
+                            <h3 class="step-title hidden-steps-title3">Comece a transformação</h3>
+                            <p class="step-text hidden-steps-text3" id="plans">Acesse o app, registre seus treinos e veja mudanças
+                                reais semana após semana.</p>
+                        </div>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number step-number-inactive hidden-steps-number2">2</div>
-                        <h3 class="step-title hidden-steps-title2">Receba seu treino</h3>
-                        <p class="step-text hidden-steps-text2">De acordo com seu objetivo, crio seu treino personalizado em até 48 horas após nossa conversa.</p>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number step-number-inactive hidden-steps-number3">3</div>
-                        <h3 class="step-title hidden-steps-title3">Comece a transformação</h3>
-                        <p class="step-text hidden-steps-text3">Acesse o app, registre seus treinos e veja mudanças
-                            reais semana após semana.</p>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-large plan-section">
+            <div class="plan-container">
+                <div class="plan-header">
+                    <h1 class="plan-title hidden-plan-title">PLANOS <span class="highlight">DISPONÍVEIS</span></h1>
+                    <p class="plan-subtitle hidden-plan-subtitle">Escolha o plano ideal para alcançar seus objetivos.</p>
+                </div>
+                <div class="period-selector hidden-period-selector">
+                    <label class="period-label" for="period">Escolha seu período:</label>
+                    <select id="period" onchange="updatePrices()">
+                        <option value="mensal">MENSAL</option>
+                        <option value="trimestral">TRIMESTRAL</option>
+                        <option value="semestral">SEMESTRAL</option>
+                    </select>
+                </div>
+                
+                <div class="plans-wrapper">
+                    <!-- Plano sem Avaliação -->
+                    <article class="plan-card hidden-plan-card1">
+                        <div>
+                            <p class="plan-type">SEM AVALIAÇÃO FÍSICA</p>
+                            <h2 class="plan-price" id="price-without">R$169,90</h2>
+                            <p class="plan-period" id="period-without">por período</p>
+                        </div>
+                        <hr class="plan-divider">
+                        <ul class="features-list">
+                            <li>Consultoria online personalizada</li>
+                            <li>Acesso ao aplicativo MFIT</li>
+                            <li>Prescrição e acompanhamento de treinos</li>
+                            <li>Suporte via WhatsApp</li>
+                            <li class="disabled">Avaliação física completa</li>
+                            <li class="disabled">Bioimpedância e medidas corporais</li>
+                            <li class="disabled">Avaliação realizada mensalmente</li>
+                            <li class="disabled">Avaliação presencial</li>
+                        </ul>
+
+                        <button class="btn-plan" onclick="escolherPlano('sem')">Escolher Plano</button>
+                    </article>
+
+                    <div class="divider hidden-divider">OU</div>
+
+                    <!-- Plano com Avaliação -->
+                    <article class="plan-card recommended hidden-plan-card2">
+                        <div>
+                            <p class="plan-type">COM AVALIAÇÃO FÍSICA</p>
+                            <h2 class="plan-price" id="price-with">R$219,90</h2>
+                            <p class="plan-period" id="period-with">por período</p>
+                        </div>
+                        <hr class="plan-divider">
+                        <ul class="features-list">
+                            <li>Consultoria online personalizada</li>
+                            <li>Acesso ao aplicativo MFIT</li>
+                            <li>Prescrição e acompanhamento de treinos</li>
+                            <li>Suporte via WhatsApp</li>
+                            <li>Avaliação física completa</li>
+                            <li>Bioimpedância e medidas corporais</li>
+                            <li>Avaliação realizada mensalmente</li>
+                            <li>Avaliação presencial</li>
+                        </ul>
+
+                        <button class="btn-plan" onclick="escolherPlano('com')">Escolher Plano</button>
+                    </article>
                 </div>
             </div>
         </section>
@@ -318,14 +387,12 @@
             <div class="cta-content">
                 <h2 id="cta-title" class="cta-title hidden-cta-title">Pronto para se <span
                         class="highlight">transformar?</span></h2>
-                <p class="cta-text hidden-cta-text">As vagas para consultoria individual são limitadas. Agende sua
-                    avaliação gratuita
-                    hoje.</p>
+                <p class="cta-text hidden-cta-text">As vagas para consultoria individual são limitadas.
+                    Comece agora mesmo!</p>
                 <div class="hidden-cta-btn">
                     <a class="btn-cta"
-                        href="https://wa.me/5511981011022?text=Olá, Renan! Quero começar minha transformação!"
-                        target="_blank" rel="noopener noreferrer">
-                        <span class="material-symbols-outlined" aria-hidden="true">chat</span>Agendar avaliação gratuita
+                        href="#plans" rel="noopener noreferrer">
+                        <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>Escolher plano
                     </a>
                 </div>
             </div>

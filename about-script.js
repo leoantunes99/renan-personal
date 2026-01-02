@@ -1,5 +1,3 @@
-// about-script.js - COPIADO E ADAPTADO DO script.js DO INDEX.HTML
-
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.mobile-menu-btn');
   const nav = document.getElementById('primary-navigation');
@@ -8,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!btn || !nav || !header) return;
 
-  // cria overlay dinamicamente
   const overlay = document.createElement('div');
   overlay.className = 'mobile-overlay';
   overlay.setAttribute('aria-hidden', 'true');
@@ -48,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isOpen) closeMenu(); else openMenu();
   });
 
-  // Fecha ao clicar em um link (útil em dispositivos móveis)
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       if (window.innerWidth < 1024 && nav.getAttribute('data-visible') === 'true') {
@@ -57,19 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Fecha ao clicar no overlay
   overlay.addEventListener('click', () => {
     if (nav.getAttribute('data-visible') === 'true') closeMenu();
   });
 
-  // Fecha ao clicar fora do menu (clique em documento)
   document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !btn.contains(e.target) && nav.getAttribute('data-visible') === 'true') {
       closeMenu();
     }
   });
 
-  // Fecha com Esc
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.getAttribute('data-visible') === 'true') {
       closeMenu();
@@ -77,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // --- NAVBAR HIDE/SHOW ON SCROLL (CORRIGIDO) ---
-  // Muda position para fixed temporariamente
+  // --- NAVBAR HIDE/SHOW ON SCROLL  ---
+
   header.style.position = 'fixed';
   header.style.width = '100%';
 
@@ -88,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateNavbar() {
     const currentScrollY = window.scrollY;
 
-    // Se rolar mais de 100px para baixo, esconde o navbar
+  
     if (currentScrollY > 100 && currentScrollY > lastScrollY) {
       header.style.transform = 'translateY(-100%)';
     } else {
-      // Ao rolar para cima, mostra o navbar
+
       header.style.transform = 'translateY(0)';
     }
 
